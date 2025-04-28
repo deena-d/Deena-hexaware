@@ -141,7 +141,7 @@ select * from payment where year(transactionDate) = 2023;
 select * from customer where customer_id not in (select customer_id from lease 
 where lease_id in (select lease_id from payment)); 
 
--- 13.Retrieve Car Details and Their Total Payments. 
+-- 13. Retrieve Car Details and Their Total Payments. 
 select v.make, v.model, sum(p.amount) as total_payments from vehicle v
 join lease l on v.vehicle_id = l.vehicle_id
 join payment p on l.lease_id = p.lease_id
